@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.accedia.tarde.tiposbasicos;
+package com.accedia.tarde.tiposbasicos.enteros;
 
 /**
  *
@@ -21,7 +21,6 @@ public class Enteros {
         
         System.out.println("El primer numero es: " + v1);
         System.out.println("El segundo numero es: " + v2);
-        
         
 
         // ==============================
