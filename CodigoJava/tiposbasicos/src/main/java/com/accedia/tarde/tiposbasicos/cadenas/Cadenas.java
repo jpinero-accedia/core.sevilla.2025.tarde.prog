@@ -63,6 +63,7 @@ public class Cadenas {
         String s1;
         String s2;
         String s3;
+        String s4;
         
         // ======= LITERALES CADENA DIRECTOS =======
         System.out.println("\n=====> 1.- Comparación de literales sin variables");
@@ -73,10 +74,128 @@ public class Cadenas {
             y la cadena:
                "%s"
             son iguales: %b
+                          
             """,
-        "hola","hola",("hola"=="hola"));
+        "hola","hola",("hola" == "hola"));
+        
         
         // ======= LITERALES CADENA EN VARIABLES =======
-        System.out.println("\n=====> 1.- Comparación de literales con variables");
+        System.out.println("\n=====> 2.- Comparación de literales con variables");
+        
+        s1="HOLA";
+        s2="hola";
+        s3="HOLA";
+        
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena:
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s2,(s1 == s2));
+        
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena:
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s3,(s1 == s3));
+        
+        // ======= VARIABLES STRING con new =======
+        System.out.println("\n=====> 3.- Comparación de Strings creados con new");
+        
+        s1=new String("HOLA");
+        s2=new String("hola");
+        s3=new String("HOLA");
+        s4=s1;
+        
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena:
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s2,(s1 == s2));
+        
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena:
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s3,(s1 == s3));
+        
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena (se le ha asignado la primera):
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s4,(s1 == s4));
+        
+        // ==========> COMO COMPARAR CADENAS DE VERDAD !!! <==========
+        System.out.println("\n=====> 4.- Comparación de Strings creados con new usando equals");
+        s1=new String("HOLA");
+        s2=new String("hola");
+        s3=new String("HOL" + "A");
+                
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena:
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s2,(s1.equals(s2)));
+        
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena:
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s3,(s1.equals(s3)));
+        
+        // ==========> COMO COMPARAR CADENAS DE VERDAD CREADAS CON LITERALES!!! <==========
+        System.out.println("\n=====> 4.- Comparación de Strings creados con literales usando equals");
+        System.out.println("ESTA ES LA COMPARACION MAS ESTANDAR.");
+        
+        s1="HOLA";
+        s2="hola";
+        s3="HOL" + "A";
+                
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena:
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s2,(s1.equals(s2)));
+        
+        System.out.printf("""
+            La cadena:
+               "%s"
+            y la cadena:
+               "%s"
+            son iguales: %b
+                          
+            """,
+        s1,s3,(s1.equals(s3)));
     }
 }
