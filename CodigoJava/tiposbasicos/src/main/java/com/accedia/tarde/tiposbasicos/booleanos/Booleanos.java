@@ -60,7 +60,5 @@ public class Booleanos {
         System.out.println("\n====> 5.- Operador NO - (!)");
         System.out.printf("! %5b = %5b.\n",bt,(!bt));
         System.out.printf("! %5b = %5b.\n",bf,(!bf));
-      
-                
     }
 }
