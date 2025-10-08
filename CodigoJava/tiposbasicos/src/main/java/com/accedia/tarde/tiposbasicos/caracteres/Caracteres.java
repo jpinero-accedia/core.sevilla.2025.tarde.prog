@@ -18,10 +18,17 @@ public class Caracteres {
                 signo.
         
             Un char puede ir desde 0 hasta 65_535.
+        
+            ASCII TABLE: https://www.ascii-code.com/
+            ANSI FORMAT CODES: https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
         */
         
         // VARS
         char c1 = ' ';
+        char c2 = ' ';
+        char c3 = ' ';
+        char c4 = ' ';
+        
         int  n1 = 0;
         int  n2 = 0;
         int  n3 = 0;
@@ -57,5 +64,46 @@ public class Caracteres {
         n2 = 0100;       //octal
         n3 = 0x40;       //hexadecimal
         n4 = 64;         //decimal
+        
+        c1 = (char) n1;
+        c2 = (char) n2;
+        c3 = (char) n3;
+        c4 = (char) n4;
+        
+        // Esto imprimirá 4 veces un '@', dado que todos los numeros eran el 64
+        //    en distintas bases, y el codigo ASCII del 64 es '@'
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+        System.out.println(c4);
+        
+        
+        // Como los char son numeros, podemos hacer operaciones con ellos
+        System.out.println("\n===> 4.- Iterando caracteres para imprimir el abecedario");
+        
+        for (char c='A'; c<='Z'; c++) {
+            System.out.println(c);
+        }
+        
+        // Podemos obtener la letra siguiente
+        System.out.println("\n===> 5.- letra siguiente");
+        
+        c1 = 'r';
+        c2 = (char) (c1 + 1);
+        
+        System.out.println("La letra que va despues de la "+ c1 +" es la "+ c2 +".");
+        
+        
+        
+        // Podemos averiguar el intervalo entre mayuscula y minuscula, y con
+        //    eso cambiar una minuscula a mayuscula.
+        System.out.println("\n===> 6.- de minuscula a mayuscula");
+        
+        n1 = 'a' - 'A'; // intervalo entre mayuscula y minuscula
+        c1 = 'e';
+        
+        c2 = (char) (c1 - n1); // resto el mismo intervalo a la e
+        
+        System.out.println("La mayuscula de "+ c1 +" es "+ c2 +".");
     }
 }
