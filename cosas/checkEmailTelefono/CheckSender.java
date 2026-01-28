@@ -22,6 +22,7 @@ public class CheckSender {
             }
         }
 
+        // devuelve si la cadena es telefono
         return ok;
     }
 
