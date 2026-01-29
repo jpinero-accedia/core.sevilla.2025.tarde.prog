@@ -5,7 +5,8 @@ package com.accedia.tarde.email;
 
 public class CheckSender {
     public static boolean esTelefonoRegex(String telefono) {
-        return telefono.matches("[0-9]{9}");
+        boolean ok = telefono.matches("\+34[0-9]{9}");
+        return ok;
     }
     
 
@@ -22,6 +23,7 @@ public class CheckSender {
             }
         }
 
+        // devuelve si la cadena es telefono
         return ok;
     }
 
