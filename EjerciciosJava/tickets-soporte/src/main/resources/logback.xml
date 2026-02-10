@@ -1,0 +1,52 @@
+<configuration>
+
+    <!-- Carpeta y nombre del log -->
+    <property name="LOG_DIR" value="logs"/>
+    <property name="APP_NAME" value="herenciarpg"/>
+
+    <!-- Patrón -->
+    <property name="PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"/>
+
+    <!-- Consola -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Archivo con rotación (tiempo + tamaño) -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Archivo “actual” -->
+        <file>${LOG_DIR}/${APP_NAME}.log</file>
+
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+
+        <!-- Rolling: un fichero por día, y si crece mucho, trocea por tamaño -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- Histórico: app.2026-02-05.0.log.gz, app.2026-02-05.1.log.gz, ... -->
+            <fileNamePattern>${LOG_DIR}/${APP_NAME}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+
+            <!-- Tamaño máximo por “trozo” -->
+            <maxFileSize>10MB</maxFileSize>
+
+            <!-- Cuántos días guardar -->
+            <maxHistory>30</maxHistory>
+
+            <!-- Límite total de espacio usado por históricos -->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Nivel global -->
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!-- Ejemplo: tu paquete en DEBUG -->
+    <!-- <logger name="mantenimiento" level="DEBUG"/> -->
+
+</configuration>
