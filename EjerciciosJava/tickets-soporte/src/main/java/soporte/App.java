@@ -4,6 +4,7 @@ import java.util.Scanner;
 import soporte.tickets.ColaTickets;
 import soporte.tickets.TicketException;
 
+
 public class App {
 
     private static ColaTickets cola;
@@ -21,7 +22,7 @@ public class App {
         return cola.getNumTickets();
     }
 
-    private static void listarPendientes() throws TicketException {
+    private static void listarPendientes() {
         cola.listaTicketsPendientes();
     }
 

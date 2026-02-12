@@ -1,9 +1,10 @@
 package soporte.tickets.tipos;
 
+import soporte.tickets.Escalable;
 import soporte.tickets.Ticket;
 import soporte.tickets.TicketException;
 
-public class TicketFrontend extends Ticket {
+public class TicketFrontend extends Ticket implements Escalable {
     private final String ruta;
     
     public TicketFrontend(String or, int prio, String ruta) {
@@ -37,14 +38,19 @@ public class TicketFrontend extends Ticket {
     
     private void generaDescripcion() {
         anyadeDescripcion(String.format(
-            """
+                """
             Ticket Frontend (origen: %s y prioridad: %d)
             Ruta: %s
             """,
-            getOrigen(),
-            getPrioridad(),
-            ruta
+                getOrigen(),
+                getPrioridad(),
+                ruta
         ));
+    }
+
+    @Override
+    public void escalar() throws TicketException {
+        this.anyadeEscala();
     }
     
 }
