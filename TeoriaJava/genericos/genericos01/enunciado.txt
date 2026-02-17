@@ -1,0 +1,1 @@
+Implementar un método genérico estático que realice la inserción de un objeto al final de un array, ambos del mismo tipo genérico, que se pasan como parámetros. Devuelve un nuevo array con el resultado de la inserción.
