@@ -20,7 +20,6 @@ public class App {
         con.ordenar();
         System.out.println(con);
         
-        
         Comparator<Integer> comp = new OrdenInversoInteger();
         
         con.ordenar(comp);
