@@ -2,6 +2,7 @@ Implementar, con tipos genéricos, la clase Contenedor, donde podremos guardar t
 
 * void insertarAlPrincipio (T nuevo)
 * void insertarAlFinal     (T nuevo)
-* T    exrtaerDelPrincipio ()
+* T    extraerDelPrincipio ()
 * T    extraerDelFinal     ()
 * void ordenar
+  
