@@ -15,12 +15,42 @@ public class App {
 
     public static void main(String[] args) {
         Integer[] misnumeros = new Integer[3];
-        misnumeros[0] = 1;
-        misnumeros[1] = 2;
-        misnumeros[2] = 3;
+        misnumeros[0] = 10;
+        misnumeros[1] = 400;
+        misnumeros[2] = 36;
         
-        Integer[] res = copiaGenerico(6, misnumeros);
-        System.out.println(Arrays.toString(res));
+        Integer[] nuevatabla = copiaGenerico(56, misnumeros);
+        imprimeTablaTipoEntero(nuevatabla);
+    }
+    
+    public static void imprimeTablaString(Object[] tabla) {
+        String s;
+        
+        for ( Object obj : tabla ) {
+            s = (String) obj;
+            System.out.println(s);
+        }
+    }
+    
+    public static void imprimeTablaEntero(Object[] tabla) {
+        Integer i;
+        
+        for ( Object obj : tabla ) {
+            i = (Integer) obj;
+            System.out.println(i);
+        }
+    }
+    
+    public static void imprimeTablaTipoEntero (Integer[] tabla) {
+        for (Integer i : tabla) {
+            System.out.println(i);
+        }
+    }
+    
+    public static void imprimeTablaTipoString (String[] tabla) {
+        for (String s : tabla) {
+            System.out.println(s);
+        }
     }
     
     public static Object[] copiaObject (Object obj, Object[] tabla) {
